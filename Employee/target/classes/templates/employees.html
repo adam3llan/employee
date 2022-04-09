@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>All Products - CodeJava</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container text-center">
+    <h1>
+        List of Products
+    </h1>
+
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Employee E-mail</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Employee Jop</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="employee: ${employeeList}">
+                    <th scope="row" th:text="${employee.id}">Employee ID</th>
+                    <td th:text="${employee.email}">Employee E-mail</td>
+                    <td th:text="${employee.name}">Employee Name</td>
+                    <td th:text="${employee.jop}">Employee Jop</td>
+                    <td>
+                        <a  th:href="@{/addTask(email=${employee.email})}" class="btn btn-success">AddTask</a>
+                    </td>
+                </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<div class="container text-center">
+    <h3>
+
+    </h3>
+</div>
+</body>
+</html>
